@@ -1,0 +1,20 @@
+{
+  "total_processed": 224,
+  "food_images": 118,
+  "non_food_images": 67,
+  "uncertain_images": 39,
+  "errors": 0,
+  "detection_methods": {
+    "yolo_direct": 139,
+    "context_clues": 25,
+    "color_analysis": 0,
+    "combined": 0
+  },
+  "timestamp": "2025-05-26T00:11:51.620598",
+  "detection_method_percentages": {
+    "yolo_direct": 117.79661016949152,
+    "context_clues": 21.1864406779661,
+    "color_analysis": 0.0,
+    "combined": 0.0
+  }
+}

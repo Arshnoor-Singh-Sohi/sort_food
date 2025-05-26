@@ -1,0 +1,182 @@
+[
+  {
+    "image": "04aa10e92f.jpg",
+    "scores": {
+      "yolo_direct": 0.4617678225040436,
+      "context_clues": 0.0,
+      "color_analysis": 0.5
+    },
+    "detected_items": "donut(0.46)"
+  },
+  {
+    "image": "04aaebbb8c.jpg",
+    "scores": {
+      "yolo_direct": 0.0,
+      "context_clues": 0.9,
+      "color_analysis": 0.18541666666666667
+    },
+    "detected_items": "bowl(context), cup(context), spoon(context), bowl(context), dining table(context), bowl(context), cup(context), bowl(context), spoon(context), spoon(context)"
+  },
+  {
+    "image": "04aa0358ed.jpg",
+    "scores": {
+      "yolo_direct": 0.45576220750808716,
+      "context_clues": 0.0,
+      "color_analysis": 0.5
+    },
+    "detected_items": "pizza(0.46), pizza(0.39)"
+  },
+  {
+    "image": "04aaebf27f.jpg",
+    "scores": {
+      "yolo_direct": 0.4533698558807373,
+      "context_clues": 0.0,
+      "color_analysis": 0.4035057471264368
+    },
+    "detected_items": "donut(0.45), donut(0.38), donut(0.35), donut(0.30)"
+  },
+  {
+    "image": "04aa397a51.jpg",
+    "scores": {
+      "yolo_direct": 0.5655197501182556,
+      "context_clues": 0.0,
+      "color_analysis": 0.29223333333333334
+    },
+    "detected_items": "cake(0.57), cake(0.39)"
+  },
+  {
+    "image": "04aaf22ac2.jpg",
+    "scores": {
+      "yolo_direct": 0.0,
+      "context_clues": 0.9,
+      "color_analysis": 0.1902680067001675
+    },
+    "detected_items": "spoon(context), cup(context), cup(context), cup(context), dining table(context)"
+  },
+  {
+    "image": "04aa82f001.jpg",
+    "scores": {
+      "yolo_direct": 0.4903576374053955,
+      "context_clues": 0.0,
+      "color_analysis": 0.5
+    },
+    "detected_items": "sandwich(0.49), sandwich(0.47)"
+  },
+  {
+    "image": "04aa8a192e.jpg",
+    "scores": {
+      "yolo_direct": 0.49612531065940857,
+      "context_clues": 0.0,
+      "color_analysis": 0.5
+    },
+    "detected_items": "cake(0.50)"
+  },
+  {
+    "image": "04aaacde5b.jpg",
+    "scores": {
+      "yolo_direct": 0.0,
+      "context_clues": 0.9,
+      "color_analysis": 0.35065555555555555
+    },
+    "detected_items": "bowl(context), bowl(context), bowl(context), bowl(context), dining table(context)"
+  },
+  {
+    "image": "04aa2eb92c.jpg",
+    "scores": {
+      "yolo_direct": 0.3748660385608673,
+      "context_clues": 0.0,
+      "color_analysis": 0.5
+    },
+    "detected_items": "sandwich(0.37), sandwich(0.28)"
+  },
+  {
+    "image": "04aa3c5b67.jpg",
+    "scores": {
+      "yolo_direct": 0.0,
+      "context_clues": 0.6885817438364028,
+      "color_analysis": 0.5
+    },
+    "detected_items": "cup(context), cup(context)"
+  },
+  {
+    "image": "04aa938d5d.jpg",
+    "scores": {
+      "yolo_direct": 0.4377920627593994,
+      "context_clues": 0.0,
+      "color_analysis": 0.48965
+    },
+    "detected_items": "sandwich(0.44), cake(0.26)"
+  },
+  {
+    "image": "04aaf0b239.jpg",
+    "scores": {
+      "yolo_direct": 0.0,
+      "context_clues": 0.9,
+      "color_analysis": 0.4062222222222222
+    },
+    "detected_items": "bowl(context), bowl(context), dining table(context), cup(context)"
+  },
+  {
+    "image": "04aa7897af.jpg",
+    "scores": {
+      "yolo_direct": 0.422728955745697,
+      "context_clues": 0.0,
+      "color_analysis": 0.5
+    },
+    "detected_items": "sandwich(0.42), sandwich(0.40), sandwich(0.29)"
+  },
+  {
+    "image": "04aaee194f.jpg",
+    "scores": {
+      "yolo_direct": 0.32120251655578613,
+      "context_clues": 0.0,
+      "color_analysis": 0.5
+    },
+    "detected_items": "pizza(0.32), sandwich(0.30)"
+  },
+  {
+    "image": "04aa275ab9.jpg",
+    "scores": {
+      "yolo_direct": 0.0,
+      "context_clues": 0.8558520138263702,
+      "color_analysis": 0.5
+    },
+    "detected_items": "spoon(context), bowl(context), dining table(context)"
+  },
+  {
+    "image": "04aab20176.jpg",
+    "scores": {
+      "yolo_direct": 0.3822515308856964,
+      "context_clues": 0.18620605170726776,
+      "color_analysis": 0.5
+    },
+    "detected_items": "pizza(0.38), dining table(context)"
+  },
+  {
+    "image": "04aa7b739a.jpg",
+    "scores": {
+      "yolo_direct": 0.2732407748699188,
+      "context_clues": 0.19337277114391327,
+      "color_analysis": 0.5
+    },
+    "detected_items": "broccoli(0.27), broccoli(0.26), dining table(context)"
+  },
+  {
+    "image": "04aad946f4.jpg",
+    "scores": {
+      "yolo_direct": 0.255828857421875,
+      "context_clues": 0.3082367569208145,
+      "color_analysis": 0.5
+    },
+    "detected_items": "banana(0.26), dining table(context)"
+  },
+  {
+    "image": "04aae57107.jpg",
+    "scores": {
+      "yolo_direct": 0.39565330743789673,
+      "context_clues": 0.0,
+      "color_analysis": 0.5
+    },
+    "detected_items": "donut(0.40)"
+  }
+]
