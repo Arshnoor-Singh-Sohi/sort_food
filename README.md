@@ -1,119 +1,107 @@
-# Food Image Filter - Quick Start Guide
+# Food Image Filter
 
-A Python tool that automatically sorts food images from non-food images using AI detection.
+A Python tool that automatically sorts your image collection by identifying which photos contain food. Perfect for organizing photos from restaurants, cooking, or mixed photo collections.
 
-## Prerequisites
+## What It Does
 
-Install all required packages with this single command:
+The tool scans through a folder of images and sorts them into three categories:
+- **Food Images** - Photos clearly containing food
+- **Non-Food Images** - Photos with no food detected  
+- **Uncertain Images** - Photos that might contain food but need manual review
 
+## Quick Start
+
+### Installation
 ```bash
 pip install ultralytics torch torchvision pillow tqdm matplotlib opencv-python numpy
 ```
 
-### What each package does:
-- **ultralytics**: Provides the YOLO object detection model
-- **torch & torchvision**: Deep learning framework for running AI models
-- **pillow**: Image processing and loading
-- **tqdm**: Progress bars to track processing
-- **matplotlib**: Creates sample image grids for verification
-- **opencv-python**: Advanced image analysis for color detection
-- **numpy**: Numerical operations for image arrays
-
-## Quick Start
-
-1. Place all your images in a folder called `images`
-2. Run the basic command:
-   ```bash
-   python food_filter.py --source images
-   ```
-3. Check the three output folders:
-   - `food_images/` - Images with food detected
-   - `non_food_images/` - Images without food
-   - `uncertain_images/` - Images needing manual review
-
-## Confidence Values Guide
-
-The confidence threshold determines how certain the AI needs to be before classifying an image as containing food.
-
-### Recommended Settings by Use Case
-
-**Default (Balanced)**
+### Basic Usage
+1. Put your images in a folder called `images`
+2. Run the tool:
 ```bash
-python food_filter.py --source images --confidence 0.35
+python optimized_food_filter.py --source images
 ```
-Good for most cases - balances accuracy with coverage.
 
-**Catch More Food (Inclusive)**
+That's it! Check the three output folders that get created automatically.
+
+## Understanding Confidence Levels
+
+The tool uses a confidence threshold to decide how certain it needs to be before classifying an image as food. Think of it like this:
+
+- **High confidence (0.5+)**: Very strict, only obvious food photos
+- **Medium confidence (0.35)**: Balanced approach (recommended)  
+- **Low confidence (0.25)**: More inclusive, catches more food but creates more uncertain cases
+
+### Common Commands
 ```bash
-python food_filter.py --source images --confidence 0.25
+# More inclusive (catches more food)
+python optimized_food_filter.py --source images --confidence 0.25
+
+# More selective (higher accuracy)  
+python optimized_food_filter.py --source images --confidence 0.45
+
+# Analyze why some images are uncertain
+python optimized_food_filter.py --source images --analyze
 ```
-Use when many food images are being missed. You'll get more false positives but fewer missed foods.
 
-**High Accuracy (Conservative)**
-```bash
-python food_filter.py --source images --confidence 0.50
+## Key Features
+
+**Smart Detection**: Uses AI object detection plus contextual clues like plates, dining tables, and utensils to identify food scenes even when the food itself is partially hidden.
+
+**Multiple Detection Methods**: Combines direct food recognition, context analysis, and color patterns for better accuracy.
+
+**Batch Processing**: Handles large image collections efficiently with progress tracking.
+
+**Detailed Logging**: Keeps track of what was detected and why, helping you understand the results.
+
+## File Structure After Processing
 ```
-Use when accuracy matters more than catching every food image. Fewer false positives but might miss some food.
-
-**Maximum Coverage (Very Inclusive)**
-```bash
-python food_filter.py --source images --confidence 0.15
+your-images-folder/
+├── food_images/          # Photos with food detected
+├── non_food_images/      # Photos without food
+├── uncertain_images/     # Photos needing manual review
+├── processing_stats.json # Detailed statistics
+└── food_filter_log.txt   # Processing log
 ```
-Catches almost all food images but requires more manual review of uncertain cases.
 
-### Understanding Confidence Values
+## Common Issues & Solutions
 
-- **0.15 - 0.25**: Very inclusive, catches most food but more false positives
-- **0.25 - 0.35**: Balanced approach, good for diverse food images
-- **0.35 - 0.50**: Conservative, high accuracy but might miss unusual foods
-- **0.50+**: Very strict, only obvious food images
+**"Too many uncertain images"**: Lower the confidence threshold to 0.25 or 0.20
+
+**"Missing obvious food photos"**: The images might have unusual angles or lighting. Try the analyze option to see what's happening.
+
+**"Out of memory errors"**: Reduce batch size with `--batch-size 25`
+
+**"No images found"**: Make sure images are directly in the source folder, not in subfolders
+
+## When to Review Uncertain Images
+
+The uncertain folder typically contains:
+- Food photos with unusual presentation
+- Images with partial food visibility
+- Photos where context suggests food but it's not clearly visible
+- Borderline cases that benefit from human judgment
+
+Spending a few minutes reviewing this folder usually helps you catch any missed food photos and understand how the tool interprets different types of images.
 
 ## Advanced Options
 
-**Disable context detection** (plates, tables, etc.):
 ```bash
-python food_filter.py --source images --no-context
+# Disable context detection (dining tables, utensils, etc.)
+python optimized_food_filter.py --source images --no-context
+
+# Disable color analysis  
+python optimized_food_filter.py --source images --no-color
+
+# Process smaller batches for large datasets
+python optimized_food_filter.py --source images --batch-size 50
 ```
 
-**Disable color analysis**:
-```bash
-python food_filter.py --source images --no-color
-```
+## System Requirements
 
-**Analyze why images are uncertain**:
-```bash
-python food_filter.py --source images --analyze
-```
+- Python 3.7 or newer
+- At least 4GB RAM (8GB recommended for large collections)
+- GPU support optional but recommended for faster processing
 
-**Process in smaller batches** (for large datasets):
-```bash
-python food_filter.py --source images --batch-size 50
-```
-
-## First Time Setup Notes
-
-1. The first run will download the YOLO model (~6MB) automatically
-2. Processing speed depends on GPU availability (check "Using device: cuda" in output)
-3. For 26GB of images, expect several hours of processing time
-
-## Troubleshooting
-
-**"No images found"**: Check that images are directly in the source folder (not subfolders)
-
-**Too many in uncertain folder**: Lower confidence to 0.25 or 0.20
-
-**Too many false positives**: Raise confidence to 0.40 or 0.45
-
-**Out of memory errors**: Reduce batch size with `--batch-size 25`
-
-## Quick Decision Guide
-
-Not sure what confidence to use? Start here:
-
-- Restaurant/professional food photos → Use 0.35
-- Home cooking/phone photos → Use 0.25  
-- Mixed collection with non-food → Use 0.40
-- Asian cuisine/soups/curries → Use 0.25
-- Packaged foods → Use 0.20
-
-After first run, check the statistics and adjust accordingly!
+The first run downloads a small AI model (~6MB) automatically. Processing speed depends on your hardware, but expect roughly 1-2 seconds per image on modern systems.
